@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use \App\Models\Student;
+use \App\Models\student;
 
 
 use Illuminate\Http\Request;
@@ -33,14 +33,25 @@ class studcontrol extends Controller
         
      }
  
+     /*  forms */
 
      
     function create(){
      return view('form');
         }
 
+          
+
+   
 
         function store(){
+
+            request()->validate([
+                "id"=>"required",
+                "name"=>"required",
+                "grade"=>"required",
+                "email"=>"required"
+            ]);
    
            $student= new Student;
            $student->name =request()->input('name');

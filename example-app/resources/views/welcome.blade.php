@@ -4,6 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      img{
+        width: 500px;
+        margin-left :250px;
+      }
+     
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -15,16 +23,21 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="/form">addstudents</a>
         </li>
       
         <li class="nav-item">
    
           <a class="nav-link" href="/data">students</a>
+        </li>
 
+        <li>
+        <a class="nav-link" href="/category/form">addcategory</a>
+        </li>
+
+        
+        <li>
+        <a class="nav-link" href="/category/data">category</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
@@ -50,13 +63,13 @@
   <!-- The slideshow/carousel -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="{{asset('imgs/download (1).png')}}" alt="Los Angeles" class="d-block w-100">
+      <img src="{{asset('imgs/download (1).png')}}" alt="Los Angeles" class="d-block" >
     </div>
     <div class="carousel-item">
-      <img  src="{{asset('imgs/download (2).png')}}" alt="Chicago" class="d-block w-100">
+      <img  src="{{asset('imgs/download (2).png')}}" alt="Chicago" class="d-block ">
     </div>
     <div class="carousel-item">
-      <img  src="{{asset('imgs/download.png')}}" alt="New York" class="d-block w-100">
+      <img  src="{{asset('imgs/download.png')}}" alt="New York" class="d-block ">
     </div>
   </div>
 

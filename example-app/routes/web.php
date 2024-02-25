@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\controllers\studcontrol;
+use App\Http\controllers\categorycontrol;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +32,26 @@ Route::post('/save',[studcontrol:: class ,"store"]);
 
 
 Route::delete('/destroy/{id}',[studcontrol:: class ,"destroy"]);
+
+
+
+
+
+
+Route::get('/category/data',[categorycontrol:: class ,"index"]);
+
+Route::get('/category/detail/{id}', [categorycontrol:: class ,"details"]);
+
+ Route::get('/category/form',[categorycontrol:: class ,"create"]);
+
+
+Route::post('/category/save',[categorycontrol:: class ,"store"]);
+
+
+Route::delete('/category/destroy/{id}',[categorycontrol:: class ,"destroy"]);
+
+
+
 
 
 
