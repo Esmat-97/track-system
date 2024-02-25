@@ -56,9 +56,12 @@ If you want to contribute to this project and make it better, your help is welco
 
 1. Fork the project.
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a pull request.
+
+ ## Demo
+ 
+4. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+5. Push to the branch (`git push origin feature/AmazingFeature`).
+6. Open a pull request.
 
 ## License
 
