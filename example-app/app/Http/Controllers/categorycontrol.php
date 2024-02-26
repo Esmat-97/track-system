@@ -42,6 +42,22 @@ class categorycontrol extends Controller
         return redirect('/category/data');
     }
 
+    
+    function update($id){
+
+        request()->validate([
+            "title" => "required",
+            "description" => "required",
+        ]);
+    
+        $student = track::findOrFail($id);
+        $student->tilte = request()->input('title');
+        $student->description = request()->input('description');
+        $student->save();
+        
+        return redirect('/category/data');
+    }
+
 
     function store(){
 

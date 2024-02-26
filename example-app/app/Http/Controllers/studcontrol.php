@@ -41,6 +41,30 @@ class studcontrol extends Controller
 
 
 
+
+     function update($id){
+
+        request()->validate([
+            "name" => "required",
+            "grade" => "required",
+            "email" => "required"
+        ]);
+    
+        $student = Student::findOrFail($id);
+
+        $student->name = request()->input('name');
+        $student->Email = request()->input('email');
+        $student->grade = request()->input('grade');
+        $student->save();
+        
+        return redirect('/data');
+    }
+    
+    
+
+
+
+
  
      /*  forms */
 

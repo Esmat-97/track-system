@@ -30,7 +30,9 @@ Route::get('/data',[studcontrol:: class ,"index"]);
 
 Route::get('/detail/{id}', [studcontrol:: class ,"details"]);
 
-Route::get('/edit/{id}', [studcontrol:: class ,"edit"]);
+Route::get('/edit/{id}', [studcontrol:: class ,"edit"])->name('edit');
+
+Route::put('/update/{id}', [studcontrol:: class ,"update"])->name('update');
 
 Route::get('/form',[studcontrol:: class ,"create"]);
 
@@ -53,6 +55,10 @@ Route::get('/category/detail/{id}', [categorycontrol:: class ,"details"]);
 
 
 Route::get('/category/edit/{id}', [categorycontrol:: class ,"edit"]);
+
+
+Route::put('/category/update/{id}', [categorycontrol:: class ,"update"])->name('update');
+
 
  Route::get('/category/form',[categorycontrol:: class ,"create"]);
 

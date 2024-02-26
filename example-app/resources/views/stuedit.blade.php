@@ -8,17 +8,11 @@
 <body>
 
 
-<form class="row g-3" method="POST" action="/save">
+<form class="row g-3" method="POST" action="/update/{{$data['id']}}">
+
+@method('put')
+
   @csrf
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label" >id</label>
-    <input type="number" class="form-control" name="id" id="inputEmail4" value="{{$data['id']}}">
-    @error('id')
-    <p class="text-danger">{{$message}}</p>
-    @enderror
-  </div>
-
-
 
   <div class="col-md-6">
     <label for="inputPassword4" class="form-label" >name</label>
