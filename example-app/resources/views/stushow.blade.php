@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <style>  
 table, th, td {  
   border: 1px solid black;  
@@ -32,6 +34,7 @@ table th {
         <th>name</th>
         <th>email</th>
         <th>delete</th>
+        <th>edit</th>
     </tr>
 
 @foreach($peo as $x)
@@ -43,8 +46,11 @@ table th {
   <form method="POST" action="/destroy/{{$x['id']}}">
     @csrf 
     @method("delete")
-    <button type="submit">delete</button>
+    <button type="submit" class="btn btn-danger">delete</button>
   </form>
+</td>
+<td>
+  <a href="/edit/{{$x['id']}}" class="btn btn-warning">edit</a>
 </td>
 
 @endforeach

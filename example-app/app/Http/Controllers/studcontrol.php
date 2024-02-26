@@ -33,6 +33,13 @@ class studcontrol extends Controller
         
      }
 
+     function edit ($id){
+        $filters= Student::find($id);
+      return view('stuedit',['data'=> $filters]);
+        
+     }
+
+
 
  
      /*  forms */

@@ -21,9 +21,16 @@ use App\Http\controllers\categorycontrol;
 
 Route::get('/',[studcontrol:: class ,"welcome"]);
 
+
+
+
+
+
 Route::get('/data',[studcontrol:: class ,"index"]);
 
 Route::get('/detail/{id}', [studcontrol:: class ,"details"]);
+
+Route::get('/edit/{id}', [studcontrol:: class ,"edit"]);
 
 Route::get('/form',[studcontrol:: class ,"create"]);
 
@@ -32,6 +39,8 @@ Route::post('/save',[studcontrol:: class ,"store"]);
 
 
 Route::delete('/destroy/{id}',[studcontrol:: class ,"destroy"]);
+
+
 
 
 
