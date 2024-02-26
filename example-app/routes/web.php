@@ -42,6 +42,9 @@ Route::get('/category/data',[categorycontrol:: class ,"index"]);
 
 Route::get('/category/detail/{id}', [categorycontrol:: class ,"details"]);
 
+
+Route::get('/category/edit/{id}', [categorycontrol:: class ,"edit"]);
+
  Route::get('/category/form',[categorycontrol:: class ,"create"]);
 
 

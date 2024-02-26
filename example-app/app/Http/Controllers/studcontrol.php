@@ -21,7 +21,7 @@ class studcontrol extends Controller
 
     function index (){
        $students= Student::all();
-       return view('showstu',['peo'=> $students]);
+       return view('stushow',['peo'=> $students]);
     }
 
 
@@ -29,15 +29,17 @@ class studcontrol extends Controller
     
     function details ($id){
         $filters= Student::find($id);
-      return view('details',['data'=> $filters]);
+      return view('studetails',['data'=> $filters]);
         
      }
+
+
  
      /*  forms */
 
      
     function create(){
-     return view('form');
+     return view('stuform');
         }
 
           

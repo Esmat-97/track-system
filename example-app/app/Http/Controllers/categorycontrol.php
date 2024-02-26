@@ -13,13 +13,13 @@ class categorycontrol extends Controller
 
     function index (){
         $tracks = track::all();
-        return view('showcategory',['tra'=> $tracks]);
+        return view('categoryshow',['tra'=> $tracks]);
      }
 
 
 
     function create (){
-        return view('formcategory');
+        return view('categoryform');
     }
 
     
@@ -29,6 +29,12 @@ class categorycontrol extends Controller
         
      }
 
+
+     function edit ($id){
+        $track= track::find($id);
+      return view('categoryedit',['tracking'=> $track]);
+        
+     }
 
      function destroy($id){
         $target= track::find($id);
