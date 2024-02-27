@@ -33,15 +33,26 @@ table th {
         <th>id</th>
         <th>name</th>
         <th>email</th>
+        <th>track_name</th>
+        <th>image</th>
+
         <th>delete</th>
         <th>edit</th>
+        <th>show</th> 
     </tr>
+
+
 
 @foreach($peo as $x)
     <tr>
 <td>{{$x["id"]}}</td>
 <td>{{$x["name"]}}</td>
 <td>{{$x["Email"]}}</td>
+<td>{{$x->track->tilte}}</td>
+<td><img src="{{ asset('imgs/' . $x->image) }}" >
+</td>
+
+
 <td>
   <form method="POST" action="/destroy/{{$x['id']}}">
     @csrf 
@@ -51,6 +62,9 @@ table th {
 </td>
 <td>
   <a href="/edit/{{$x['id']}}" class="btn btn-warning">edit</a>
+</td>
+<td>
+  <a href="/detail/{{$x['id']}}" class="btn btn-primary">show</a>
 </td>
 
 @endforeach

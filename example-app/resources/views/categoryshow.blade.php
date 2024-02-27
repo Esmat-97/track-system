@@ -26,6 +26,7 @@
         <p class="card-text">{{$x["updated_at"]}}</p>
         <p class="card-text">{{$x["created_at"]}}</p>
         <a href="/category/edit/{{$x['id']}}" class="btn btn-warning">Edit</a>
+        <a href="/category/detail/{{$x['id']}}" class="btn btn-primary">Show</a>
         <form method="POST" action="/category/destroy/{{$x['id']}}">
     @csrf 
     @method("delete")

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use \App\Models\student;
+use \App\Models\track;
 
 
 use Illuminate\Http\Request;
@@ -24,6 +25,11 @@ class studcontrol extends Controller
        return view('stushow',['peo'=> $students]);
     }
 
+
+    function create(){
+        $tracks= track::all();
+        return view('stuform',['peo'=> $tracks]);
+        }
 
 
     
@@ -61,40 +67,44 @@ class studcontrol extends Controller
     }
     
     
-
-
-
-
- 
-     /*  forms */
-
-     
-    function create(){
-     return view('stuform');
-        }
-
           
 
    
 
-        function store(){
+    public function store()
 
-            request()->validate([
-                "id"=>"required",
-                "name"=>"required",
-                "grade"=>"required",
-                "email"=>"required"
-            ]);
-   
-           $student= new Student;
-           $student->name =request()->input('name');
-           $student->id =request()->input('id');
-           $student->Email =request()->input('email');
-           $student->grade =request()->input('grade');
-           $student->save();
-           return redirect('/data');
 
-            }
+    {
+
+    
+        // Validate request
+        request()->validate([
+            "id" => "required",
+            "name" => "required",
+            "grade" => "required",
+            "email" => "required",
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);
+    
+        // Handle image upload
+        $imagePath = null;
+        if (request()->hasFile('image')) {
+            $imagePath = request()->file('image')->store('imgs', 'public');
+        }
+    
+        // Create new Student instance
+        $student = new Student;
+        $student->name = request()->input('name');
+        $student->id = request()->input('id');
+        $student->Email = request()->input('email');
+        $student->grade = request()->input('grade');
+        $student->track_id = request()->input('track_id'); // Assuming you have this field in your form
+        $student->image = $imagePath; // Assign the image path to the image attribute
+        $student->save();
+    
+        return redirect('/data');  
+    }
+
 
 
             function destroy($id){
@@ -106,50 +116,52 @@ class studcontrol extends Controller
 
     
 
-  private  $student=[
-        ['id'=>1,'name'=>'mohamed','img'=>'download (1).png'],
-        ['id'=>2,'name'=>'Amr','img'=>'download (2).png'],
-        ['id'=>3,'name'=>'Ali','img'=>'download.png'],
-        ['id'=>4,'name'=>'hala','img'=>'download.png'],
 
-    ];
 
-    
- function ted(){
-    return view('iti',['stds'=>$this->student]);
-    }
+//   private  $student=[
+//         ['id'=>1,'name'=>'mohamed','img'=>'download (1).png'],
+//         ['id'=>2,'name'=>'Amr','img'=>'download (2).png'],
+//         ['id'=>3,'name'=>'Ali','img'=>'download.png'],
+//         ['id'=>4,'name'=>'hala','img'=>'download.png'],
 
+//     ];
 
     
-    /* web */
-    function moh1 () {
-        $student=[
-            ['id'=>1,'name'=>'mohamed'],
-            ['id'=>2,'name'=>'Amr'],
-            ['id'=>3,'name'=>'Ali'],
-            ['id'=>4,'name'=>'hala'],
+//  function ted(){
+//     return view('iti',['stds'=>$this->student]);
+//     }
+
+
     
-        ];
-        return $student;
+//     /* web */
+//     function moh1 () {
+//         $student=[
+//             ['id'=>1,'name'=>'mohamed'],
+//             ['id'=>2,'name'=>'Amr'],
+//             ['id'=>3,'name'=>'Ali'],
+//             ['id'=>4,'name'=>'hala'],
+    
+//         ];
+//         return $student;
         
-    }
+//     }
 
 
-    function moh2 ($id) {
-        $student=[
-            ['id'=>1,'name'=>'mohamed'],
-            ['id'=>2,'name'=>'Amr'],
-            ['id'=>3,'name'=>'Ali'],
-            ['id'=>4,'name'=>'hala'],
+//     function moh2 ($id) {
+//         $student=[
+//             ['id'=>1,'name'=>'mohamed'],
+//             ['id'=>2,'name'=>'Amr'],
+//             ['id'=>3,'name'=>'Ali'],
+//             ['id'=>4,'name'=>'hala'],
     
-        ];
+//         ];
     
-        foreach($student as $stu){
-            if($stu['id'] == $id ){
-                return $stu;
-            }
+//         foreach($student as $stu){
+//             if($stu['id'] == $id ){
+//                 return $stu;
+//             }
            
-        }
+//         }
         
-    }
+//     }
 }

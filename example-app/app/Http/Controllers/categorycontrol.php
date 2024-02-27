@@ -69,7 +69,6 @@ class categorycontrol extends Controller
 
        $student= new track;
        $student->tilte =request()->input('title');
-       $student->id =request()->input('id');
        $student->description =request()->input('description');
        $student->save();
        return redirect('/category/data');

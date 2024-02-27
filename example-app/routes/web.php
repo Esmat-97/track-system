@@ -19,9 +19,7 @@ use App\Http\controllers\categorycontrol;
 
 
 
-Route::get('/',[studcontrol:: class ,"welcome"]);
-
-
+Route::get('/app',[studcontrol:: class ,"welcome"]);
 
 
 
@@ -79,3 +77,7 @@ Route::get('/four',[studcontrol:: class ,"moh1"]);
 
 Route::get('/three/{id}', [studcontrol:: class ,"moh2"]);
 
+
+Auth::routes();
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
