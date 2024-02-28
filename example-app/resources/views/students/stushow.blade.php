@@ -43,6 +43,7 @@ table th {
 
 
 
+
 @foreach($peo as $x)
     <tr>
 <td>{{$x["name"]}}</td>

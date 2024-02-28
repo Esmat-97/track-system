@@ -13,4 +13,5 @@ class student extends Model
     function track(){
         return $this->belongsTo(track::class);
     }
+    
 }

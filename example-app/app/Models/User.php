@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\track;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -23,6 +24,14 @@ class User extends Authenticatable
         'password',
     ];
 
+
+    function usertotrack(){
+
+        return $this->hasMany(track::class);
+        
+    }
+    
+   
     /**
      * The attributes that should be hidden for serialization.
      *

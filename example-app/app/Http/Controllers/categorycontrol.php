@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use \App\Models\track;
 
+use \App\Models\User;
+
 use \App\Models\student;      //
 
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Auth;
 
 
 class categorycontrol extends Controller
@@ -76,6 +80,7 @@ class categorycontrol extends Controller
        $student= new track;
        $student->tilte =request()->input('title');
        $student->description =request()->input('description');
+       $student->user_id=Auth::id();
        $student->save();
        return redirect('/category/data');
 
