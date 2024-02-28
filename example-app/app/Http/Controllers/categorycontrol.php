@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use \App\Models\track;
 
+use \App\Models\student;      //
+
 use Illuminate\Http\Request;
 
 
 class categorycontrol extends Controller
 {
     //
+
+
 
     function index (){
         $tracks = track::all();

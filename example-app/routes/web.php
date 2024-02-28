@@ -26,20 +26,31 @@ Route::get('/app',[studcontrol:: class ,"welcome"]);
 
 Route::get('/data',[studcontrol:: class ,"index"]);
 
+
+
 Route::get('/detail/{id}', [studcontrol:: class ,"details"]);
+
 
 Route::get('/edit/{id}', [studcontrol:: class ,"edit"])->name('edit');
 
 Route::put('/update/{id}', [studcontrol:: class ,"update"])->name('update');
 
-Route::get('/form',[studcontrol:: class ,"create"]);
+
+Route::delete('/destroy/{id}',[studcontrol:: class ,"destroy"]);
 
 
 Route::post('/save',[studcontrol:: class ,"store"]);
 
 
-Route::delete('/destroy/{id}',[studcontrol:: class ,"destroy"]);
 
+Route::get('/form',[studcontrol:: class ,"create"]);
+
+
+
+
+
+
+                               /*                 */
 
 
 

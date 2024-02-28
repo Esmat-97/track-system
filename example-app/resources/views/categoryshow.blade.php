@@ -15,6 +15,8 @@
 
 
 <div class="row row-cols-1 row-cols-md-3 g-4 ">
+
+@if(isset($tra))
 @foreach($tra as $x)
   <div class="col  ">
     <div class="card h-100 ">
@@ -24,6 +26,12 @@
         <p class="card-text">{{$x["description"]}}</p>
         <p class="card-text">{{$x["updated_at"]}}</p>
         <p class="card-text">{{$x["created_at"]}}</p>
+
+        @foreach($x->students as $item)
+        <p class="card-text">{{$item->name}}</p>
+        @endforeach
+
+
         <a href="/category/edit/{{$x['id']}}" class="btn btn-warning">Edit</a>
         <a href="/category/detail/{{$x['id']}}" class="btn btn-primary">Show</a>
         <form method="POST" action="/category/destroy/{{$x['id']}}">
@@ -34,7 +42,11 @@
       </div>
     </div>
   </div>
-  @endforeach
+  @endforeach 
+  @endif
+
+
+
   </div>
 
  
