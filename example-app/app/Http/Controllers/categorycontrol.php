@@ -13,30 +13,33 @@ class categorycontrol extends Controller
 {
     //
 
+    public function __construct(){
+        $this->middleware('auth');
+    }
 
 
     function index (){
         $tracks = track::all();
-        return view('categoryshow',['tra'=> $tracks]);
+        return view('categories.categoryshow',['tra'=> $tracks]);
      }
 
 
 
     function create (){
-        return view('categoryform');
+        return view('categories.categoryform');
     }
 
     
     function details ($id){
         $filters= track::find($id);
-      return view('categorydetails',['data'=> $filters]);
+      return view('categories.categorydetails',['data'=> $filters]);
         
      }
 
 
      function edit ($id){
         $track= track::find($id);
-      return view('categoryedit',['tracking'=> $track]);
+      return view('categories.categoryedit',['tracking'=> $track]);
         
      }
 

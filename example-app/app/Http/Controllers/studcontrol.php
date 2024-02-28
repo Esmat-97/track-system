@@ -22,26 +22,26 @@ class studcontrol extends Controller
 
     function index (){
        $students= Student::all();
-       return view('stushow',['peo'=> $students]);
+       return view('students.stushow',['peo'=> $students]);
     }
 
 
     function create(){
         $tracks= track::all();
-        return view('stuform',['peo'=> $tracks]);
+        return view('students.stuform',['peo'=> $tracks]);
         }
 
 
     
     function details ($id){
         $filters= Student::find($id);
-      return view('studetails',['data'=> $filters]);
+      return view('students.studetails',['data'=> $filters]);
         
      }
 
      function edit ($id){
         $filters= Student::find($id);
-      return view('stuedit',['data'=> $filters]);
+      return view('students.stuedit',['data'=> $filters]);
         
      }
 
