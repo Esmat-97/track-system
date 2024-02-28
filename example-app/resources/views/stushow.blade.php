@@ -47,8 +47,9 @@ table th {
     <tr>
 <td>{{$x["name"]}}</td>
 <td>{{$x["Email"]}}</td>
-<td>{{$x->track->tilte}}</td>
-<td><img src="{{ asset('imgs/' . $x->image) }}" >
+<td> <a href="{{route('track.show' , $x->track_id)}}" >{{$x->track->tilte}}</a></td>
+<td><img src="{{ asset('imgs/' . $x->image) }}" alt="Image">
+
 </td>
 
 

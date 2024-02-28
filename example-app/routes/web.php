@@ -49,7 +49,7 @@ Route::delete('/destroy/{id}',[studcontrol:: class ,"destroy"]);
 
 Route::get('/category/data',[categorycontrol:: class ,"index"]);
 
-Route::get('/category/detail/{id}', [categorycontrol:: class ,"details"]);
+Route::get('/category/detail/{id}', [categorycontrol:: class ,"details"])->name('track.show');
 
 
 Route::get('/category/edit/{id}', [categorycontrol:: class ,"edit"]);
