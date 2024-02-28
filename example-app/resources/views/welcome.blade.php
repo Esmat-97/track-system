@@ -39,11 +39,16 @@
         <li>
         <a class="nav-link" href="/category/data">category</a>
         </li>
+
+        <li>
+        <a class="nav-link" href="/category/data">Authers</a>
+        </li>
+
+        <li>
+        <a class="nav-link" href="/category/data">Posts</a>
+        </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+\
     </div>
   </div>
 </nav>
