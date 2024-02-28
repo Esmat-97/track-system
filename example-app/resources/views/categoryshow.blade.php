@@ -20,7 +20,6 @@
     <div class="card h-100 ">
       <div class="card-body bg-info ">
       <div class="card-header">categories</div>
-        <h5 class="card-title ">{{$x["id"]}}</h5>
         <h1 class="card-text">{{$x["tilte"]}}</h1>
         <p class="card-text">{{$x["description"]}}</p>
         <p class="card-text">{{$x["updated_at"]}}</p>

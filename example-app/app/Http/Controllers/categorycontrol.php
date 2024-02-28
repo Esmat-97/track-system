@@ -62,7 +62,6 @@ class categorycontrol extends Controller
     function store(){
 
         request()->validate([
-            "id"=>"required",
             "title"=>"required",
             "description"=>"required"
         ]);

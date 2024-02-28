@@ -79,7 +79,6 @@ class studcontrol extends Controller
     
         // Validate request
         request()->validate([
-            "id" => "required",
             "name" => "required",
             "grade" => "required",
             "email" => "required",
@@ -95,7 +94,6 @@ class studcontrol extends Controller
         // Create new Student instance
         $student = new Student;
         $student->name = request()->input('name');
-        $student->id = request()->input('id');
         $student->Email = request()->input('email');
         $student->grade = request()->input('grade');
         $student->track_id = request()->input('track_id'); // Assuming you have this field in your form

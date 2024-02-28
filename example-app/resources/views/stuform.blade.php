@@ -11,13 +11,7 @@
 <form class="row g-3" method="POST" action="/save" enctype="multipart/form-data">
 
   @csrf
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label" >id</label>
-    <input type="text" class="form-control" name="id" id="inputEmail4" value="{{old('id')}}">
-    @error('id')
-    <p class="text-danger">{{$message}}</p>
-    @enderror
-  </div>
+
 
 
   <div class="col-md-6">
