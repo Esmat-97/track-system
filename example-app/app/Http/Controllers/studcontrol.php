@@ -71,7 +71,7 @@ class studcontrol extends Controller
 
    
 
-    public function store()
+    public function store(Request  $request)
 
 
     {
@@ -88,8 +88,10 @@ class studcontrol extends Controller
         // Handle image upload
         $imagePath = null;
         if (request()->hasFile('image')) {
-            $imagePath = request()->file('image')->store('imgs', 'public');
-        }
+
+            $imageName =time().".".request()->image->extension();
+            request()->image->move(public_path("imgs"), $imageName);
+        
     
         // Create new Student instance
         $student = new Student;
@@ -97,9 +99,11 @@ class studcontrol extends Controller
         $student->Email = request()->input('email');
         $student->grade = request()->input('grade');
         $student->track_id = request()->input('track_id'); // Assuming you have this field in your form
-        $student->image = $imagePath; // Assign the image path to the image attribute
+        $student->image = $imageName; // Assign the image path to the image attribute
         $student->save();
-    
+        }
+
+
         return redirect('/data');  
     }
 
