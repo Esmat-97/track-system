@@ -25,6 +25,11 @@
         <li class="nav-item">
           <a class="nav-link" href="/form">addstudents</a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/home">home</a>
+        </li>
+        @can('is-inst')
       
         <li class="nav-item">
    
@@ -41,14 +46,11 @@
         </li>
 
         <li>
-        <a class="nav-link" href="/user/data">Users</a>
+        <a class="nav-link" href="/user/data">instructors</a>
         </li>
-
-        <li>
-        <a class="nav-link" href="/category/data">Posts</a>
-        </li>
+@endcan
       </ul>
-\
+
     </div>
   </div>
 </nav>

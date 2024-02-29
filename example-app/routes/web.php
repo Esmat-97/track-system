@@ -20,7 +20,7 @@ use App\Http\controllers\Usercontrol;
 
 
 
-Route::get('/app',[studcontrol:: class ,"welcome"]);
+Route::get('/',[studcontrol:: class ,"welcome"]);
 
 
 
@@ -101,4 +101,4 @@ Route::get('/three/{id}', [studcontrol:: class ,"moh2"]);
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

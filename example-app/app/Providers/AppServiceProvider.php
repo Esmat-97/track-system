@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Gate;
+use App\Models\User;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,5 +27,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        Gate::define("is-inst",function(User $user){
+            return $user->name =="esmat";
+        });
+
+      
     }
 }
