@@ -41,7 +41,7 @@
         </li>
 
         <li>
-        <a class="nav-link" href="/category/data">Authers</a>
+        <a class="nav-link" href="/user/data">Users</a>
         </li>
 
         <li>

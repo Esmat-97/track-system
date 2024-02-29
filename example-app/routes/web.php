@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\controllers\studcontrol;
 use App\Http\controllers\categorycontrol;
+use App\Http\controllers\Usercontrol;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,7 +55,16 @@ Route::get('/form',[studcontrol:: class ,"create"]);
 
 
 
+  Route::get('/user/data',[Usercontrol :: class ,"index"]);
 
+
+  Route::get('/user/detail/{id}', [Usercontrol :: class ,"details"]);
+
+
+  Route::delete('/user/destroy/{id}',[Usercontrol :: class ,"destroy"]);
+
+
+                            /*             */
 
 
 

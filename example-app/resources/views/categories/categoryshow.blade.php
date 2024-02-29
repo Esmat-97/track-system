@@ -21,12 +21,8 @@
   <div class="col  ">
     <div class="card h-100 ">
       <div class="card-body bg-info ">
-      <div class="card-header">categories</div>
-    
+      <div class="card-header">{{$x->user->name}}</div>
         <h1 class="card-text">{{$x["tilte"]}}</h1>
-     
-        <h1 class="card-text">{{$x->user->name}}</h1>
-  
         <p class="card-text">{{$x["description"]}}</p>
         <p class="card-text">{{$x["updated_at"]}}</p>
         <p class="card-text">{{$x["created_at"]}}</p>
