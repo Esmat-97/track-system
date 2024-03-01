@@ -1,4 +1,4 @@
-# track-sytem
+# track-system
 
 Description: This is a template for a Laravel project README file.
 
